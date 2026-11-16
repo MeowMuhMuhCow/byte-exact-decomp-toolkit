@@ -1,0 +1,17 @@
+{
+  "_comment": "Template symbol-table snapshot for watcom106_shellsort_solver.js (extracted via orakel.py / slotdiag.py)",
+  "frame_top": 32,
+  "target_offsets": {
+    "1": 24,
+    "2": 20,
+    "3": 16,
+    "4": 12
+  },
+  "c2_input": [
+    {"id": 1, "txt": "loc_a", "size": 2, "fd": 0, "offset": 0, "isPhysical": true, "isGhost": false},
+    {"id": 2, "txt": "loc_b", "size": 2, "fd": 0, "offset": 0, "isPhysical": true, "isGhost": false},
+    {"id": -1, "txt": "ghost_0", "size": 3, "fd": 0, "offset": 0, "isPhysical": false, "isGhost": true},
+    {"id": 3, "txt": "loc_c", "size": 4, "fd": 0, "offset": 0, "isPhysical": true, "isGhost": false},
+    {"id": 4, "txt": "loc_d", "size": 4, "fd": 0, "offset": 0, "isPhysical": true, "isGhost": false}
+  ]
+}

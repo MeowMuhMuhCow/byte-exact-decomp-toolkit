@@ -1,0 +1,19 @@
+# Allowed #pragma aux inline instructions (standard Watcom fixed-point / BIOS header macros)
+# kind	value	note
+mnemonic	add	fixed-point math
+mnemonic	adc	fixed-point math
+mnemonic	and	bit mask
+mnemonic	cwde	sign extension
+mnemonic	dec	counter decrement
+mnemonic	idiv	fixed-point division
+mnemonic	imul	fixed-point multiply
+mnemonic	int	requires matching int_operand
+mnemonic	jne	short branch
+mnemonic	mov	register move
+mnemonic	sar	arithmetic shift
+mnemonic	shl	logical shift
+mnemonic	shrd	double-precision shift
+mnemonic	sub	subtraction
+mnemonic	xchg	register exchange
+int_operand	16h	BIOS keyboard interrupt
+int_operand	0x16	BIOS keyboard interrupt

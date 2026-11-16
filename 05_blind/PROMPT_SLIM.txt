@@ -1,0 +1,19 @@
+Worker ID: {WORKER_ID}
+Target Unit: {UNIT}
+Target Function: {FUNC} (current distance: {REST} instructions)
+
+GOAL:
+Reconstruct `{FUNC}` in `{WORK_FILE}` so that the historical compiler produces 100% byte-identical machine code (`GLEICH`), while zero neighbour functions in `{UNIT}` regress.
+
+MANDATORY FIRST STEP:
+1. Inspect the original target assembly and run the initial judge measurement yourself:
+   WORKER_ID={WORKER_ID} bash 03_richter/probe.sh orig {UNIT} {FUNC}
+   WORKER_ID={WORKER_ID} python3 03_richter/probe_queue.py {UNIT} {WORK_FILE} {FUNC}
+2. For large functions (`Rest > 40`), inspect the register-blind structural sections:
+   PROBE_ABSCHNITT=1 WORKER_ID={WORKER_ID} python3 03_richter/probe_queue.py {UNIT} {WORK_FILE} {FUNC}
+
+RULES:
+- Only edit the block of `{FUNC}` in `{WORK_FILE}`.
+- Forbidden: inline assembly (`__asm`, `_asm`, `_emit`), `#pragma aux` with raw bytes or custom register contracts, segment overrides, or altering external function prototypes.
+- Archive every compiled intermediate draft (`v001.cpp`, `v002.cpp`, ...) in `{DRAFTS_DIR}/` before overwriting `{WORK_FILE}`.
+- Do not stop after a fixed number of attempts. Stop ONLY when `{FUNC}` reaches `GLEICH` (`0` differing instructions, `EXTRA 0`).
